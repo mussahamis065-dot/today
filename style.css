@@ -1,0 +1,1082 @@
+/* =========================================================
+   GIVEN BIRTHDAY WEBSITE
+   Main Stylesheet
+========================================================= */
+
+/* =========================================================
+   1. RESET & GLOBAL SETTINGS
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Main Colors */
+  --background: #10070d;
+  --background-light: #1b0b14;
+
+  --pink: #ff5c8a;
+  --pink-light: #ff91ae;
+  --pink-dark: #d93668;
+
+  --white: #ffffff;
+  --soft-white: #fff5f8;
+
+  --text: #eadce2;
+  --muted: #ae929e;
+
+  /* Glass Effect */
+  --glass: rgba(255, 255, 255, 0.07);
+  --glass-border: rgba(255, 255, 255, 0.13);
+
+  /* Shadows */
+  --shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+
+  /* Border Radius */
+  --radius: 28px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+
+  font-family: "DM Sans", sans-serif;
+
+  color: var(--white);
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(255, 92, 138, 0.15),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 45%,
+      rgba(255, 145, 174, 0.1),
+      transparent 30%
+    ),
+    var(--background);
+
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   2. FLOATING HEARTS & CONFETTI CONTAINERS
+========================================================= */
+
+#hearts-container,
+#confetti-container {
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  z-index: 50;
+}
+
+/* =========================================================
+   3. HERO SECTION
+========================================================= */
+
+.hero {
+  position: relative;
+
+  min-height: 100svh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 40px 20px;
+
+  overflow: hidden;
+}
+
+/* Decorative Glow */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: var(--pink);
+
+  filter: blur(120px);
+
+  opacity: 0.14;
+
+  top: -220px;
+
+  left: -180px;
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: #ffb6c9;
+
+  filter: blur(120px);
+
+  opacity: 0.1;
+
+  bottom: -220px;
+
+  right: -180px;
+}
+
+/* Hero Content */
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 900px;
+
+  animation: heroAppear 1.2s ease forwards;
+}
+
+/* =========================================================
+   4. EYEBROW
+========================================================= */
+
+.eyebrow {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--pink-light);
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+.eyebrow i {
+  font-size: 0.8rem;
+
+  animation: sparkle 2s infinite;
+}
+
+/* =========================================================
+   5. HERO TITLE
+========================================================= */
+
+.hero h1 {
+  margin: 25px 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(3.4rem, 9vw, 7.5rem);
+
+  line-height: 0.95;
+
+  letter-spacing: -3px;
+}
+
+.hero h1 span {
+  background: linear-gradient(135deg, #ffffff, #ff6d98, #ffffff);
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+.hero h1 i {
+  color: var(--pink);
+
+  font-size: 0.55em;
+
+  display: inline-block;
+
+  animation: heartbeat 1.5s infinite;
+}
+
+/* =========================================================
+   6. NICKNAME
+========================================================= */
+
+.nickname {
+  color: var(--muted);
+
+  font-size: clamp(1rem, 2.3vw, 1.25rem);
+
+  line-height: 1.7;
+}
+
+.nickname strong {
+  color: var(--soft-white);
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   7. SURPRISE BUTTON
+========================================================= */
+
+.surprise-btn {
+  display: inline-flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 34px;
+
+  padding: 16px 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 999px;
+
+  color: white;
+
+  background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+
+  font-size: 0.95rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 15px 40px rgba(255, 61, 113, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+.surprise-btn i {
+  font-size: 1.1rem;
+
+  transition: transform 0.3s ease;
+}
+
+.surprise-btn:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 22px 55px rgba(255, 61, 113, 0.38);
+
+  filter: brightness(1.08);
+}
+
+.surprise-btn:hover i {
+  transform: rotate(-10deg) scale(1.15);
+}
+
+.surprise-btn:active {
+  transform: scale(0.97);
+}
+
+/* =========================================================
+   8. TAP NOTE
+========================================================= */
+
+.tap-note {
+  margin-top: 15px;
+
+  color: #806b75;
+
+  font-size: 0.78rem;
+}
+
+.tap-note i {
+  color: var(--pink);
+
+  margin-left: 4px;
+}
+
+/* =========================================================
+   9. SCROLL HINT
+========================================================= */
+
+.scroll-hint {
+  position: absolute;
+
+  bottom: 25px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #876e79;
+
+  font-size: 0.9rem;
+
+  animation: bounce 1.7s infinite;
+}
+
+/* =========================================================
+   10. GENERAL SECTIONS
+========================================================= */
+
+section:not(.hero) {
+  width: min(1050px, calc(100% - 36px));
+
+  margin: 0 auto;
+
+  padding: 110px 0;
+}
+
+/* =========================================================
+   11. SECTION LABEL
+========================================================= */
+
+.section-label {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--pink-light);
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  text-align: center;
+}
+
+.section-label i {
+  color: var(--pink);
+
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   12. MESSAGE CARD
+========================================================= */
+
+.message-card {
+  position: relative;
+
+  margin-top: 28px;
+
+  padding: clamp(32px, 6vw, 65px);
+
+  border: 1px solid var(--glass-border);
+
+  border-radius: var(--radius);
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.09),
+    rgba(255, 255, 255, 0.035)
+  );
+
+  backdrop-filter: blur(18px);
+
+  box-shadow: var(--shadow);
+
+  overflow: hidden;
+}
+
+/* Decorative heart */
+
+.message-card::after {
+  content: "\f004";
+
+  position: absolute;
+
+  right: -30px;
+
+  bottom: -65px;
+
+  font-family: "Font Awesome 6 Free";
+
+  font-weight: 900;
+
+  font-size: 220px;
+
+  color: rgba(255, 92, 138, 0.035);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   13. QUOTE ICON
+========================================================= */
+
+.quote-icon {
+  color: var(--pink);
+
+  font-size: 3rem;
+
+  opacity: 0.8;
+}
+
+/* =========================================================
+   14. MESSAGE HEADING
+========================================================= */
+
+.message-card h2 {
+  margin: 25px 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(2rem, 5vw, 3.8rem);
+
+  line-height: 1.15;
+}
+
+/* =========================================================
+   15. MESSAGE TEXT
+========================================================= */
+
+.birthday-message {
+  position: relative;
+
+  z-index: 1;
+}
+
+.birthday-message p {
+  max-width: 780px;
+
+  margin: 17px 0;
+
+  color: var(--text);
+
+  font-size: 1rem;
+
+  line-height: 1.9;
+}
+
+/* =========================================================
+   16. FINAL LOVE MESSAGE
+========================================================= */
+
+.birthday-message .final-love {
+  margin-top: 30px;
+
+  color: var(--pink-light);
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  font-size: 1.05rem;
+}
+
+.final-love i {
+  margin-left: 6px;
+
+  color: var(--pink);
+
+  animation: heartbeat 1.5s infinite;
+}
+
+/* =========================================================
+   17. SIGNATURE
+========================================================= */
+
+.signature {
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 30px;
+
+  color: #9c808c;
+
+  font-size: 0.9rem;
+
+  font-style: italic;
+}
+
+.signature i {
+  color: var(--pink);
+
+  font-size: 0.75rem;
+}
+
+/* =========================================================
+   18. GALLERY SECTION
+========================================================= */
+
+.gallery-section {
+  text-align: center;
+}
+
+.gallery-section h2 {
+  margin: 22px 0 10px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+.section-intro {
+  color: var(--muted);
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   19. PHOTO GALLERY
+========================================================= */
+
+.gallery {
+  display: grid;
+
+  grid-template-columns: 1.2fr 0.8fr;
+
+  grid-template-rows: 300px 300px;
+
+  gap: 16px;
+
+  margin-top: 40px;
+}
+
+/* =========================================================
+   20. PHOTO CARD
+========================================================= */
+
+.photo-card {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  background: #24101d;
+
+  cursor: pointer;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+}
+
+.photo-one {
+  grid-row: span 2;
+}
+
+.photo-card img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease;
+}
+
+.photo-card:hover img {
+  transform: scale(1.07);
+
+  filter: brightness(0.72);
+}
+
+/* =========================================================
+   21. PHOTO ICON
+========================================================= */
+
+.photo-icon {
+  position: absolute;
+
+  top: 16px;
+
+  right: 16px;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 43px;
+
+  height: 43px;
+
+  border-radius: 50%;
+
+  color: white;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.photo-card:hover .photo-icon {
+  transform: scale(1.1);
+
+  background: rgba(255, 92, 138, 0.8);
+}
+
+/* =========================================================
+   22. FINAL SECTION
+========================================================= */
+
+.final-section {
+  text-align: center;
+}
+
+.final-heart {
+  font-size: 4rem;
+
+  color: var(--pink);
+
+  animation: heartbeat 1.5s infinite;
+}
+
+.final-heart i {
+  filter: drop-shadow(0 0 25px rgba(255, 92, 138, 0.5));
+}
+
+.final-section h2 {
+  margin: 25px 0 20px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(2.3rem, 6vw, 4.5rem);
+}
+
+.final-description {
+  max-width: 650px;
+
+  margin: auto;
+
+  color: var(--muted);
+
+  line-height: 1.9;
+}
+
+/* =========================================================
+   23. BIG GIVEN NAME
+========================================================= */
+
+.big-name {
+  margin: 35px 0 8px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(4rem, 15vw, 10rem);
+
+  line-height: 1;
+
+  letter-spacing: -3px;
+
+  background: linear-gradient(135deg, #ffffff, var(--pink));
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+/* =========================================================
+   24. FOOTER
+========================================================= */
+
+footer {
+  padding: 30px 20px 45px;
+
+  text-align: center;
+
+  color: #806873;
+
+  font-size: 0.8rem;
+}
+
+footer i {
+  color: var(--pink);
+
+  margin-left: 5px;
+}
+
+/* =========================================================
+   25. IMAGE LIGHTBOX
+========================================================= */
+
+.lightbox {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 100;
+
+  display: none;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 25px;
+
+  background: rgba(8, 2, 6, 0.95);
+
+  backdrop-filter: blur(12px);
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: min(900px, 94vw);
+
+  max-height: 90vh;
+
+  object-fit: contain;
+
+  border-radius: 18px;
+
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+}
+
+/* =========================================================
+   26. CLOSE LIGHTBOX BUTTON
+========================================================= */
+
+.close-lightbox {
+  position: absolute;
+
+  top: 20px;
+
+  right: 22px;
+
+  width: 46px;
+
+  height: 46px;
+
+  display: grid;
+
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 50%;
+
+  color: white;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  font-size: 1.1rem;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.close-lightbox:hover {
+  background: var(--pink);
+
+  transform: rotate(90deg);
+}
+
+/* =========================================================
+   27. REVEAL ANIMATION
+========================================================= */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(40px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* =========================================================
+   28. FLOATING HEART
+========================================================= */
+
+.floating-heart {
+  position: absolute;
+
+  bottom: -40px;
+
+  opacity: 0;
+
+  animation: floatHeart linear forwards;
+}
+
+/* =========================================================
+   29. CONFETTI
+========================================================= */
+
+.confetti {
+  position: absolute;
+
+  top: -20px;
+
+  width: 8px;
+
+  height: 14px;
+
+  animation: confettiFall linear forwards;
+}
+
+/* =========================================================
+   30. ANIMATIONS
+========================================================= */
+
+@keyframes heroAppear {
+  from {
+    opacity: 0;
+
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.18);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(15deg) scale(1.2);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(9px);
+  }
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0) rotate(0deg);
+
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.75;
+  }
+
+  100% {
+    transform: translateY(-110vh) rotate(25deg);
+
+    opacity: 0;
+  }
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(720deg);
+
+    opacity: 0;
+  }
+}
+
+/* =========================================================
+   31. TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows:
+      330px
+      260px;
+  }
+
+  .photo-one {
+    grid-column: span 2;
+
+    grid-row: auto;
+  }
+}
+
+/* =========================================================
+   32. MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 30px 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 16vw, 5rem);
+
+    letter-spacing: -1.5px;
+  }
+
+  section:not(.hero) {
+    width: calc(100% - 30px);
+
+    padding: 80px 0;
+  }
+
+  .message-card {
+    padding: 30px 24px;
+
+    border-radius: 23px;
+  }
+
+  .message-card h2 {
+    font-size: 2.2rem;
+  }
+
+  .birthday-message p {
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+
+    grid-template-rows:
+      420px
+      300px
+      300px;
+  }
+
+  .photo-one {
+    grid-column: auto;
+  }
+
+  .big-name {
+    font-size: 23vw;
+  }
+
+  .surprise-btn {
+    padding: 15px 24px;
+  }
+}
+
+/* =========================================================
+   33. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+}

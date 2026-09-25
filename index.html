@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Basic Settings -->
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="A special birthday surprise for GIVEN." />
+
+    <meta name="theme-color" content="#160912" />
+
+    <title>Happy Birthday, GIVEN ❤️</title>
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- =====================================================
+         FONT AWESOME ICONS
+    ====================================================== -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- =====================================================
+         TWEMOJI
+    ====================================================== -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- =====================================================
+         OUR CSS
+    ====================================================== -->
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- =====================================================
+         FLOATING HEARTS
+    ====================================================== -->
+
+    <div id="hearts-container" aria-hidden="true"></div>
+
+    <!-- =====================================================
+         CONFETTI
+    ====================================================== -->
+
+    <div id="confetti-container" aria-hidden="true"></div>
+
+    <!-- =====================================================
+         HERO / OPENING SECTION
+    ====================================================== -->
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <!-- Small Introduction -->
+
+        <p class="eyebrow">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+          A little birthday surprise
+        </p>
+
+        <!-- Main Heading -->
+
+        <h1>
+          Happy Birthday,
+
+          <br />
+
+          <span>GIVEN</span>
+
+          <i class="fa-solid fa-heart"></i>
+        </h1>
+
+        <!-- Nickname -->
+
+        <p class="nickname">
+          To my favorite person, my
+
+          <strong>MY CHUBBY</strong>
+        </p>
+
+        <!-- Surprise Button -->
+
+        <button class="surprise-btn" id="surpriseBtn" type="button">
+          <i class="fa-solid fa-gift"></i>
+
+          <span>Open Your Surprise</span>
+        </button>
+
+        <!-- Small Text -->
+
+        <p class="tap-note">
+          Made especially for you
+
+          <i class="fa-solid fa-heart"></i>
+        </p>
+      </div>
+
+      <!-- Scroll Indicator -->
+
+      <div class="scroll-hint" aria-hidden="true">
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         BIRTHDAY MESSAGE SECTION
+    ====================================================== -->
+
+    <section class="message-section reveal" id="message">
+      <!-- Section Label -->
+
+      <div class="section-label">
+        <i class="fa-solid fa-envelope-open-text"></i>
+
+        A message for you
+      </div>
+
+      <!-- Message Card -->
+
+      <div class="message-card">
+        <!-- Decorative Icon -->
+
+        <div class="quote-icon" aria-hidden="true">
+          <i class="fa-solid fa-quote-left"></i>
+        </div>
+
+        <!-- Heading -->
+
+        <h2>Happy Birthday, My Love</h2>
+
+        <!-- Message -->
+
+        <div class="birthday-message">
+          <p>
+            Happy Birthday to my absolute favorite person! As we get closer to
+            celebrating our first full year together, I just want you to know
+            how much you mean to me.
+          </p>
+
+          <p>
+            Thank you for filling my life with so much warmth, joy, and
+            unforgettable memories. I am so lucky to have you by my side.
+          </p>
+
+          <p>
+            May this year bring you all the happiness and love you deserve.
+            Happy Birthday, my love!
+          </p>
+
+          <!-- Final Love Message -->
+
+          <p class="final-love">
+            NAKUPENDA SANA GIVEN WANGU
+
+            <i class="fa-solid fa-heart"></i>
+          </p>
+        </div>
+
+        <!-- Signature -->
+
+        <div class="signature">
+          <i class="fa-solid fa-heart"></i>
+
+          From someone who cares about you
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PHOTO GALLERY
+    ====================================================== -->
+
+    <section class="gallery-section reveal" id="gallery">
+      <!-- Section Label -->
+
+      <div class="section-label">
+        <i class="fa-solid fa-camera-retro"></i>
+
+        Little moments of you
+      </div>
+
+      <!-- Gallery Heading -->
+
+      <h2>My Beautiful GIVEN</h2>
+
+      <p class="section-intro">A few beautiful moments worth remembering.</p>
+
+      <!-- =================================================
+             GALLERY
+        ================================================== -->
+
+      <div class="gallery">
+        <!-- PHOTO 1 -->
+
+        <button
+          class="photo-card photo-one"
+          type="button"
+          data-image="images/given1.jpg"
+          aria-label="View Given's first photo"
+        >
+          <img src="images/given1.jpg" alt="Given outdoors" />
+
+          <span class="photo-icon">
+            <i class="fa-solid fa-expand"></i>
+          </span>
+        </button>
+
+        <!-- PHOTO 2 -->
+
+        <button
+          class="photo-card photo-two"
+          type="button"
+          data-image="images/given2.jpg"
+          aria-label="View Given's second photo"
+        >
+          <img src="images/given2.jpg" alt="Given wearing sunglasses" />
+
+          <span class="photo-icon">
+            <i class="fa-solid fa-expand"></i>
+          </span>
+        </button>
+
+        <!-- PHOTO 3 -->
+
+        <button
+          class="photo-card photo-three"
+          type="button"
+          data-image="images/given3.jpg"
+          aria-label="View Given's third photo"
+        >
+          <img src="images/given3.jpg" alt="Given smiling" />
+
+          <span class="photo-icon">
+            <i class="fa-solid fa-expand"></i>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         FINAL BIRTHDAY SECTION
+    ====================================================== -->
+
+    <section class="final-section reveal" id="final">
+      <!-- Heart -->
+
+      <div class="final-heart" aria-hidden="true">
+        <i class="fa-solid fa-heart"></i>
+      </div>
+
+      <!-- Small Heading -->
+
+      <p class="eyebrow">
+        <i class="fa-solid fa-sparkles"></i>
+
+        One more thing...
+      </p>
+
+      <!-- Main Heading -->
+
+      <h2>Keep smiling, birthday girl.</h2>
+
+      <!-- Final Message -->
+
+      <p class="final-description">
+        I hope this new chapter brings you beautiful moments, big dreams,
+        endless happiness, and everything your heart wishes for.
+      </p>
+
+      <!-- Big Name -->
+
+      <div class="big-name">GIVEN</div>
+
+      <!-- Nickname -->
+
+      <p class="nickname">
+        Forever my
+
+        <strong>MY CHUBBY</strong>
+
+        <i class="fa-solid fa-heart"></i>
+      </p>
+    </section>
+
+    <!-- =====================================================
+         IMAGE LIGHTBOX
+    ====================================================== -->
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <!-- Close Button -->
+
+      <button
+        class="close-lightbox"
+        id="closeLightbox"
+        type="button"
+        aria-label="Close image"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Full Image -->
+
+      <img id="lightboxImage" src="" alt="Full size birthday photo" />
+    </div>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+      <p>
+        Made especially for GIVEN
+
+        <i class="fa-solid fa-heart"></i>
+      </p>
+    </footer>
+
+    <!-- =====================================================
+         TWEMOJI INITIALIZATION
+    ====================================================== -->
+
+    <script>
+      twemoji.parse(document.body, {
+        folder: "svg",
+        ext: ".svg",
+      });
+    </script>
+
+    <!-- =====================================================
+         OUR JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
